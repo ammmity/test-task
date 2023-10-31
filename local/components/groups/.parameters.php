@@ -3,16 +3,15 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
-use Bitrix\Main\Loader;
-use Bitrix\Main\Localization\Loc;
-
-Loc::loadMessages(__FILE__);
-
 // Параметры
 $arComponentParameters = [
     'PARAMETERS' => [
-        'LIST_TITLE'  =>  'Список групп',
-        'CACHE_TIME'  =>  ['DEFAULT' => 3600],
+        'LIST_TITLE'  =>  [
+            'PARENT' => 'BASE',
+            'NAME' => 'Заголовок списка',
+            'DEFAULT' => 'Список групп'
+        ],
+        "CACHE_TIME" => [],
         'VARIABLE_ALIASES' => [
             'ID' => ['NAME' => 'Имя переменнрй ID элемента'],
         ],
